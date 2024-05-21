@@ -1,6 +1,6 @@
 <?php
 // URL da API CoinGecko para obter preços, volume, market cap, alta/baixa em 24h e variações percentuais
-$api_url = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=brl&include_market_cap=true&include_24hr_vol=true&include_24hr_high_low=true&include_24hr_change=true';
+$api_url = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=brl&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true';
 
 // Inicializar cURL
 $ch = curl_init();
@@ -25,8 +25,6 @@ if (json_last_error() !== JSON_ERROR_NONE) {
 $bitcoin_price = $data['bitcoin']['brl'];
 $market_cap = $data['bitcoin']['brl_market_cap'];
 $volume_24h = $data['bitcoin']['brl_24h_vol'];
-$high_24h = $data['bitcoin']['brl_24h_high'];
-$low_24h = $data['bitcoin']['brl_24h_low'];
 $change_percentage_24h = $data['bitcoin']['brl_24h_change'];
 
 ?>
@@ -76,8 +74,6 @@ $change_percentage_24h = $data['bitcoin']['brl_24h_change'];
                 <div class="card-body">
                     <h2><i class="bi bi-currency-dollar"></i><?php echo number_format($bitcoin_price, 2, ',', '.'); ?></h2><br/>
                     <p><strong>Variação em 24h:</strong> <?php echo number_format($change_percentage_24h, 2, ',', '.'); ?>%</p>
-                    <p><strong>Alta em 24h:</strong> R$<?php echo number_format($high_24h, 2, ',', '.'); ?> BRL</p>
-                    <p><strong>Baixa em 24h:</strong> R$<?php echo number_format($low_24h, 2, ',', '.'); ?> BRL</p>
                     <p><strong>Market Cap:</strong> R$<?php echo number_format($market_cap, 2, ',', '.'); ?> BRL</p>
                 </div>
             </div>
