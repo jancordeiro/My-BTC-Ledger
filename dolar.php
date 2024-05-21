@@ -1,6 +1,6 @@
 <?php
 // URL da API CoinGecko para obter preços, volume, market cap, alta/baixa em 24h e variações percentuais
-$api_url = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_high_low=true&include_24hr_change=true';
+$api_url = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true';
 
 // Inicializar cURL
 $ch = curl_init();
@@ -25,8 +25,6 @@ if (json_last_error() !== JSON_ERROR_NONE) {
 $bitcoin_price = $data['bitcoin']['usd'];
 $market_cap = $data['bitcoin']['usd_market_cap'];
 $volume_24h = $data['bitcoin']['usd_24h_vol'];
-$high_24h = $data['bitcoin']['usd_24h_high'];
-$low_24h = $data['bitcoin']['usd_24h_low'];
 $change_percentage_24h = $data['bitcoin']['usd_24h_change'];
 
 ?>
@@ -55,7 +53,7 @@ $change_percentage_24h = $data['bitcoin']['usd_24h_change'];
                 <a class="btn btn-secondary active" href="index.php"><i class="bi bi-stack"></i> Painel</a>
                 <a class="btn btn-success" href="#"><i class="bi bi-file-earmark-plus"></i> Novo Registro</a>
                 <a class="btn btn-primary" href="#"><i class="bi bi-wallet"></i> Meus Registro</a>
-                <a class="btn btn-warning" href="#"><i class="fa-solid fa-brazilian-real-sign"></i> BRL</a>
+                <a class="btn btn-warning" href="index.php"><i class="fa-solid fa-brazilian-real-sign"></i> BRL</a>
             </div>
             <div class="navbar-nav">
                 <a class="btn btn-danger my-2"><i class="bi bi-box-arrow-right"></i> Logout</a>
@@ -76,8 +74,6 @@ $change_percentage_24h = $data['bitcoin']['usd_24h_change'];
                 <div class="card-body">
                     <h2><i class="bi bi-currency-dollar"></i><?php echo number_format($bitcoin_price, 2, ',', '.'); ?></h2><br/>
                     <p><strong>Variação em 24h:</strong> <?php echo number_format($change_percentage_24h, 2, ',', '.'); ?>%</p>
-                    <p><strong>Alta em 24h:</strong> $<?php echo number_format($high_24h, 2, ',', '.'); ?> USD</p>
-                    <p><strong>Baixa em 24h:</strong> $<?php echo number_format($low_24h, 2, ',', '.'); ?> USD</p>
                     <p><strong>Market Cap:</strong> $<?php echo number_format($market_cap, 2, ',', '.'); ?> USD</p>
                 </div>
             </div>
