@@ -53,7 +53,7 @@ $change_percentage_24h = $data['bitcoin']['usd_24h_change'];
                 <a class="btn btn-secondary active" href="index.php"><i class="bi bi-stack"></i> Painel</a>
                 <a class="btn btn-success" href="#"><i class="bi bi-file-earmark-plus"></i> Novo Registro</a>
                 <a class="btn btn-primary" href="#"><i class="bi bi-wallet"></i> Meus Registro</a>
-                <a class="btn btn-warning" href="index.php"><i class="fa-solid fa-brazilian-real-sign"></i> BRL</a>
+                <a class="btn btn-warning" href="real.php"><i class="fa-solid fa-brazilian-real-sign"></i> BRL</a>
             </div>
             <div class="navbar-nav">
                 <a class="btn btn-danger my-2"><i class="bi bi-box-arrow-right"></i> Logout</a>
