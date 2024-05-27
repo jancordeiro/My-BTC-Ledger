@@ -6,7 +6,7 @@ $api_url = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currenc
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $api_url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Habilitar TRUE ao colocar em produção
 
 // Executar solicitação cURL
 $response = curl_exec($ch);
