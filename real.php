@@ -72,7 +72,7 @@ $change_percentage_24h = $data['bitcoin']['brl_24h_change'];
             <div class="card text-bg-warning mb-3" style="max-width: 18rem;">
                 <div class="card-header"><i class="bi bi-currency-bitcoin"></i> Bitcoin (BRL)</div>
                 <div class="card-body">
-                    <h2><i class="bi bi-currency-dollar"></i><?php echo number_format($bitcoin_price, 2, ',', '.'); ?></h2><br/>
+                    <h2>R$ <?php echo number_format($bitcoin_price, 2, ',', '.'); ?></h2><br/>
                     <p><strong>Variação em 24h:</strong> <?php echo number_format($change_percentage_24h, 2, ',', '.'); ?>%</p>
                     <p><strong>Market Cap:</strong> R$<?php echo number_format($market_cap, 2, ',', '.'); ?> BRL</p>
                 </div>
